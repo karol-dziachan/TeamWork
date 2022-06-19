@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TeamWork.App/1.0.0": {
+        "dependencies": {
+          "TeamWork.Domain": "1.0.0"
+        },
+        "runtime": {
+          "TeamWork.App.dll": {}
+        }
+      },
+      "TeamWork.Domain/1.0.0": {
+        "runtime": {
+          "TeamWork.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TeamWork.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TeamWork.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
