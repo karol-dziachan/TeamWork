@@ -5,14 +5,6 @@ using Task = TeamWork.Domain.Entity.Task;
 
 namespace TeamWork.App.Managers;
 
-/*
- 
-   Console.WriteLine("10. Get project by id");
-   Console.WriteLine("11. Update project");
-
-   Console.WriteLine("13. Get project's tasks");
-   Console.WriteLine("14. Get project by task");
- */
 
 public class ProjectManager
 {
@@ -70,6 +62,32 @@ public class ProjectManager
         return addedId;
     }
 
+    public int UpdateProject()
+    {
+        Console.WriteLine("Enter project id");
+        int projectId;
+        var projectIdInput = Console.ReadLine();
+        Int32.TryParse(projectIdInput, out projectId);
+        var validateProject = _projectService.GetItemById(projectId);
+
+        if (validateProject == null)
+        {
+            Console.WriteLine("Project no found");
+            return -1;
+        }
+        
+        Console.WriteLine("Enter the project name");
+        string projectName = Console.ReadLine();
+        
+       
+        _projectService.UpdateItem(new Project(projectId, projectName));
+        
+        return projectId;
+        
+        
+    }
+    
+
     public int CompletlyProjectRemove()
     {
         Console.WriteLine("Enter project id");
@@ -122,11 +140,43 @@ public class ProjectManager
         return validateProject;
     }
 
-    public int UpdateTheProject()
+    public int GetProjectById()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Enter project id");
+        int projectId;
+        var projectIdInput = Console.ReadLine();
+        Int32.TryParse(projectIdInput, out projectId);
+        var validateProject = _projectService.GetItemById(projectId);
+
+        if (validateProject == null)
+        {
+            Console.WriteLine("Project no found");
+            return -1;
+        }
+        
+        Console.WriteLine(validateProject.ToString());
+        return validateProject.Id;
     }
 
-    
-    
+    public int GetProjectTasks()
+    {
+        Console.WriteLine("Enter project id");
+        int projectId;
+        var projectIdInput = Console.ReadLine();
+        Int32.TryParse(projectIdInput, out projectId);
+        var validateProject = _projectService.GetItemById(projectId);
+
+        if (validateProject == null)
+        {
+            Console.WriteLine("Project no found");
+            return -1;
+        }
+
+        foreach (var task in validateProject.Tasks)
+        {
+            Console.WriteLine(_taskService.GetItemById(task).ToString());
+        }
+
+        return 0;
+    }
 }

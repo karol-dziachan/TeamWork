@@ -266,8 +266,9 @@ public class TaskManager
         _taskService.AddItem(new Task(3, 2, 2, "This is example description", "This is example name", "2020.05.20"));
         _taskService.AddItem(new Task(4, 2, 2, "This is example description", "This is example name", "2020.05.20"));
         _taskService.AddItem(new Task(5, 2, 2, "This is example description", "This is example name", "2020.05.20"));
-        _taskService.AddItem(new Task(7, 2, 2, "This is example description", "This is example name", "2020.05.20"));
         _taskService.AddItem(new Task(6, 2, 2, "This is example description", "This is example name", "2020.05.20"));
+        _taskService.AddItem(new Task(7, 2, 2, "This is example description", "This is example name", "2020.05.20"));
+
     }
     
 }

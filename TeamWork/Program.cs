@@ -72,8 +72,19 @@ while (true)
              var deletedProjectId = projectManager.CompletlyProjectRemove();
              Console.WriteLine("Deleted id: " + deletedProjectId);
              break;
+         case "10":
+             var getProjectById = projectManager.GetProjectById();
+             Console.WriteLine("getProjectById id: " + getProjectById);
+             break;
+         case "11":
+             var updatedProjectId = projectManager.UpdateProject();
+             Console.WriteLine("Updated id: " + updatedProjectId);
+             break;
          case "12":
              projectManager.ShowAllProjects();
+             break;
+         case "13":
+             projectManager.GetProjectTasks();
              break;
          case "14":
              var projectIdByTask = projectManager.GetProjectByTask();
