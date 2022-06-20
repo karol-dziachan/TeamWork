@@ -145,7 +145,7 @@ public class TaskManager
             return -1;
         }
 
-        RemoveProjectTask(projectId, taskId);
+        RemoveProjectTask(_projectService.GetProjectByTask(taskId), taskId);
         
         int validateReturn = _projectService.AddOneTask(projectId, taskId);
         if (validateReturn == -1)
